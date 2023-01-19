@@ -16,5 +16,7 @@ jobs:
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Spongebob
+      - name: checkout repo
+        uses: actions/checkout@v1
       - name: Log greeting time
         run: echo "${{ steps.greet.outputs.time }}"
