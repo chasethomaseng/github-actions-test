@@ -7,7 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: list files
+        run: |
+          pwd
+          ls
       - name: simple JS action
+        id: greet
         uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: Spongebob
+      - name: Log greeting time
+        run: echo "${{ steps.greet.outputs.time }}"
