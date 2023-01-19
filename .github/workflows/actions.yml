@@ -7,7 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      - name: list files after checkout
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+        # git clone git@github:$GITHUB_REPOSITORY
+        # git checkout $GITHUB_SHA
       - name: simple JS action
         id: greet
         uses: actions/hello-world-javascript-action@v1
@@ -15,7 +24,7 @@ jobs:
           who-to-greet: Spongebob
       - name: checkout repo
         uses: actions/checkout@v1
-      - name: list files
+      - name: list files after checkout
         run: |
           pwd
           ls -a
