@@ -15,7 +15,7 @@ jobs:
         run: node -v
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{maxtrix.node_version}}
+          node-version: ${{matrix.node_version}}
       - name: log node version
         run: node -v
   
