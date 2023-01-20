@@ -1,11 +1,23 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
-  #push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+  push:
+    branches:
+      - main
+      - 'feature/*'
+      - '!feature/featC'
+    tags:
+      - v1.*
+      - '!v2.*'
+    paths:
+      - '**.js'
+    # paths-ignore:
+    #   - 'docs/**'
+  # repository_dispatch:
+  #   types: [build]
+  # push:
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened]
   # schedule:
   #   - cron: "0/5 * * * *"
   #   - cron: "0/6 * * * *"
