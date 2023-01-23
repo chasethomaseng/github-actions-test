@@ -25,4 +25,4 @@ jobs:
           "address": "dwded"
           }'
       - name: get users
-        run: curl http://localhost:3000/api/user
+        run: curl http://localhost:3001/api/user
